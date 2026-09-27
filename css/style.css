@@ -12,6 +12,22 @@
 
     --raio: 10px;
     --sombra: 0 8px 25px rgba(0, 0, 0, 0.07);
+
+    /* Tokens de espaçamento — escala modular do Design System */
+    --espaco-1: 7px;
+    --espaco-2: 8px;
+    --espaco-3: 10px;
+    --espaco-4: 12px;
+    --espaco-5: 14px;
+    --espaco-6: 18px;
+    --espaco-7: 20px;
+    --espaco-8: 25px;
+    --espaco-9: 30px;
+    --espaco-10: 40px;
+    --espaco-11: 60px;
+    --espaco-12: 70px;
+    --espaco-13: 80px;
+    --espaco-14: 100px;
 }
 
 * {
@@ -45,13 +61,13 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 30px;
+    gap: var(--espaco-9);
 }
 
 .logo {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: var(--espaco-3);
     color: var(--cor-primaria);
     font-weight: 700;
     text-decoration: none;
@@ -71,7 +87,7 @@ body {
 
 nav ul {
     display: flex;
-    gap: 25px;
+    gap: var(--espaco-8);
     margin: 0;
     padding: 0;
     list-style: none;
@@ -89,7 +105,7 @@ nav a[aria-current="page"] {
 }
 
 .hero {
-    padding: 100px 0;
+    padding: var(--espaco-14) 0;
     background:
         linear-gradient(
             120deg,
@@ -105,7 +121,7 @@ nav a[aria-current="page"] {
 
 .hero h1,
 .pagina-titulo h1 {
-    margin: 8px 0 20px;
+    margin: var(--espaco-2) 0 var(--espaco-7);
     font-size: clamp(2.2rem, 5vw, 4rem);
     line-height: 1.1;
 }
@@ -124,23 +140,23 @@ nav a[aria-current="page"] {
 }
 
 .secao {
-    padding: 80px 0;
+    padding: var(--espaco-13) 0;
 }
 
 .secao-cabecalho {
     max-width: 700px;
-    margin-bottom: 40px;
+    margin-bottom: var(--espaco-10);
 }
 
 .secao h2 {
-    margin-top: 8px;
+    margin-top: var(--espaco-2);
     font-size: 2rem;
 }
 
 .cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
+    gap: var(--espaco-8);
 }
 
 .card,
@@ -153,7 +169,7 @@ nav a[aria-current="page"] {
 }
 
 .card {
-    padding: 30px;
+    padding: var(--espaco-9);
 }
 
 .card h3 {
@@ -161,7 +177,7 @@ nav a[aria-current="page"] {
 }
 
 .pagina-titulo {
-    padding: 70px 0;
+    padding: var(--espaco-12) 0;
     background: #eaf3ef;
 }
 
@@ -177,14 +193,14 @@ nav a[aria-current="page"] {
 
 .projetos {
     display: grid;
-    gap: 25px;
+    gap: var(--espaco-8);
 }
 
 .projeto {
     display: grid;
     grid-template-columns: 80px 1fr;
-    gap: 25px;
-    padding: 30px;
+    gap: var(--espaco-8);
+    padding: var(--espaco-9);
 }
 
 .projeto-numero {
@@ -194,12 +210,12 @@ nav a[aria-current="page"] {
 }
 
 .projeto h2 {
-    margin: 0 0 8px;
+    margin: 0 0 var(--espaco-2);
     font-size: 1.5rem;
 }
 
 .chamada {
-    padding: 70px 0;
+    padding: var(--espaco-12) 0;
     text-align: center;
     color: white;
     background: var(--cor-primaria);
@@ -211,7 +227,7 @@ nav a[aria-current="page"] {
 
 .botao {
     display: inline-block;
-    margin-top: 20px;
+    margin-top: var(--espaco-7);
     padding: 13px 25px;
     border: 2px solid var(--cor-primaria);
     border-radius: 7px;
@@ -235,12 +251,12 @@ nav a[aria-current="page"] {
 
 .formulario-container {
     max-width: 850px;
-    padding: 40px;
+    padding: var(--espaco-10);
 }
 
 form {
     display: grid;
-    gap: 30px;
+    gap: var(--espaco-9);
 }
 
 fieldset {
@@ -260,14 +276,14 @@ legend {
 .campo {
     display: flex;
     flex-direction: column;
-    gap: 7px;
-    margin-top: 20px;
+    gap: var(--espaco-1);
+    margin-top: var(--espaco-7);
 }
 
 .linha {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    gap: var(--espaco-7);
 }
 
 label {
@@ -278,7 +294,7 @@ input,
 select,
 textarea {
     width: 100%;
-    padding: 12px 14px;
+    padding: var(--espaco-4) var(--espaco-5);
     border: 1px solid #aebbb4;
     border-radius: 6px;
     background: white;
@@ -316,7 +332,7 @@ small {
     display: grid;
     grid-template-columns: auto 1fr;
     align-items: start;
-    column-gap: 10px;
+    column-gap: var(--espaco-3);
 }
 
 .checkbox input {
@@ -344,6 +360,91 @@ small {
     text-align: center;
 }
 
+
+/* =========================================================
+   MENU MOBILE — padrão colapsável acessível
+   HTML esperado:
+   <button class="menu-toggle" aria-expanded="false"
+           aria-controls="menu-principal">Menu</button>
+   <nav id="menu-principal" class="menu-mobile">...</nav>
+   ========================================================= */
+
+.menu-toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: var(--espaco-3);
+    padding: var(--espaco-3) var(--espaco-5);
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio);
+    background: var(--cor-branco);
+    color: var(--cor-texto);
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease,
+                border-color 0.2s ease;
+}
+
+.menu-toggle:hover,
+.menu-toggle:focus-visible {
+    background: var(--cor-fundo);
+    color: var(--cor-primaria);
+    border-color: var(--cor-primaria);
+}
+
+.menu-toggle:focus-visible {
+    outline: 3px solid rgba(23, 107, 77, 0.2);
+    outline-offset: 2px;
+}
+
+@media (max-width: 576px) {
+    .menu-toggle {
+        display: inline-flex;
+    }
+
+    nav.menu-mobile {
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-8px);
+        transition:
+            max-height 0.25s ease,
+            opacity 0.2s ease,
+            transform 0.25s ease,
+            visibility 0s linear 0.25s;
+    }
+
+    nav.menu-mobile.aberto,
+    .menu-toggle[aria-expanded="true"] + nav.menu-mobile {
+        max-height: 300px;
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        transition:
+            max-height 0.25s ease,
+            opacity 0.2s ease,
+            transform 0.25s ease,
+            visibility 0s linear 0s;
+    }
+
+    nav.menu-mobile ul {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--espaco-8);
+        padding: var(--espaco-6) 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .menu-toggle,
+    nav.menu-mobile {
+        transition: none;
+    }
+}
+
 /* =========================================================
    BREAKPOINT 1 — até 576px: smartphones
    ========================================================= */
@@ -366,7 +467,7 @@ small {
     }
 
     .hero {
-        padding: 60px 0;
+        padding: var(--espaco-11) 0;
     }
 
     .hero-conteudo,
@@ -394,11 +495,11 @@ small {
     }
 
     .formulario-container {
-        padding: 20px;
+        padding: var(--espaco-7);
     }
 
     fieldset {
-        padding: 18px;
+        padding: var(--espaco-6);
     }
 }
 
@@ -408,7 +509,7 @@ small {
 @media (min-width: 577px) and (max-width: 768px) {
     .container {
         grid-template-columns: repeat(6, minmax(0, 1fr));
-        column-gap: 20px;
+        column-gap: var(--espaco-7);
     }
 
     .hero-conteudo,
@@ -438,7 +539,7 @@ small {
 @media (min-width: 769px) and (max-width: 992px) {
     .container {
         grid-template-columns: repeat(12, minmax(0, 1fr));
-        column-gap: 20px;
+        column-gap: var(--espaco-7);
     }
 
     .hero-conteudo {
@@ -465,7 +566,7 @@ small {
     .container {
         width: min(1100px, 92%);
         grid-template-columns: repeat(12, minmax(0, 1fr));
-        column-gap: 25px;
+        column-gap: var(--espaco-8);
     }
 
     .hero-conteudo {
@@ -492,7 +593,7 @@ small {
     .container {
         width: min(1200px, 92%);
         grid-template-columns: repeat(12, minmax(0, 1fr));
-        column-gap: 25px;
+        column-gap: var(--espaco-8);
     }
 
     .hero-conteudo {
