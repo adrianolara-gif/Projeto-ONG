@@ -14,8 +14,14 @@
             <a class="logo" href="index.html">
             <img src="img/logo-ong.png" alt="Logo da ONG Solidária">
             </a>
-
-            <nav aria-label="Navegação principal">
+            <nav id="menu-principal" class="menu-mobile" aria-label="Navegação principal">
+                <button
+                    class="menu-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="menu-principal">
+                    Menu
+                </button>
                 <ul>
                     <li><a href="index.html">Início</a></li>
                     <li><a href="projetos.html" aria-current="page">Projetos</a></li>
@@ -106,5 +112,6 @@
             <p>&copy; 2026 ONG Solidária. Todos os direitos reservados.</p>
         </div>
     </footer>
+    <script src="menu-mobile.js"></script>
 </body>
 </html>
