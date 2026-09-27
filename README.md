@@ -195,7 +195,7 @@ Portanto, o projeto **não utiliza atualmente um roteador JavaScript de Single P
 ### 1. Clone o repositório
 
 ```bash
-git clone https://github.com/seu-usuario/projeto-ong.git
+git clone https://github.com/adrianolara-gif/Projeto-ONG.git
 ```
 
 ### 2. Entre no diretório
